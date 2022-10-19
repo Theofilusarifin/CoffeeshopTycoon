@@ -84,7 +84,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="24dp"
-            android:layout_marginTop="8dp"
+            android:layout_marginTop="16dp"
             android:layout_marginEnd="24dp"
             app:cardCornerRadius="20dp"
             app:cardElevation="10dp"
@@ -105,7 +105,7 @@
                     android:fontFamily="@font/open_sans_semibold"
                     android:text="RECIPES"
                     android:textColor="@color/black"
-                    android:textSize="14sp"
+                    android:textSize="20sp"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
@@ -119,7 +119,7 @@
                     android:text="cost per cup of coffee is IDR 10.600 \nhow many cup do you want to sell ?"
                     android:textAlignment="center"
                     android:textColor="@color/black"
-                    android:textSize="12sp"
+                    android:textSize="16sp"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/btnMinMilk" />
@@ -133,7 +133,7 @@
                     android:text="set selling price"
                     android:textAlignment="center"
                     android:textColor="@color/black"
-                    android:textSize="12sp"
+                    android:textSize="16sp"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/txtCupNumber" />
@@ -142,7 +142,7 @@
                     android:id="@+id/textView16"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="16dp"
+                    android:layout_marginTop="24dp"
                     android:fontFamily="@font/open_sans"
                     android:text="Coffee"
                     android:textColor="@color/black"
@@ -155,7 +155,7 @@
                     android:id="@+id/textView11"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="16dp"
+                    android:layout_marginTop="24dp"
                     android:fontFamily="@font/open_sans"
                     android:text="Milk"
                     android:textColor="@color/black"
@@ -168,7 +168,7 @@
                     android:id="@+id/textView12"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="16dp"
+                    android:layout_marginTop="24dp"
                     android:fontFamily="@font/open_sans"
                     android:text="Water"
                     android:textColor="@color/black"
@@ -179,42 +179,45 @@
 
                 <EditText
                     android:id="@+id/txtNumCoffee"
-                    android:layout_width="30dp"
-                    android:layout_height="25dp"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
                     android:layout_marginTop="4dp"
                     android:background="@null"
                     android:ems="10"
                     android:inputType="number"
+                    android:text="0"
                     android:textAlignment="center"
-                    android:textSize="16sp"
+                    android:textSize="20sp"
                     app:layout_constraintEnd_toEndOf="@+id/btnAddCoffee"
                     app:layout_constraintStart_toStartOf="@+id/btnAddCoffee"
                     app:layout_constraintTop_toBottomOf="@+id/btnAddCoffee" />
 
                 <EditText
                     android:id="@+id/txtNumMilk"
-                    android:layout_width="30dp"
-                    android:layout_height="25dp"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
                     android:layout_marginTop="4dp"
                     android:background="@null"
                     android:ems="10"
                     android:inputType="number"
+                    android:text="0"
                     android:textAlignment="center"
-                    android:textSize="16sp"
+                    android:textSize="20sp"
                     app:layout_constraintEnd_toEndOf="@+id/btnAddMilk"
                     app:layout_constraintStart_toStartOf="@+id/btnAddMilk"
                     app:layout_constraintTop_toBottomOf="@+id/btnAddMilk" />
 
                 <EditText
                     android:id="@+id/txtNumWater"
-                    android:layout_width="30dp"
-                    android:layout_height="25dp"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
                     android:layout_marginTop="4dp"
                     android:background="@null"
                     android:ems="10"
                     android:inputType="number"
+                    android:text="0"
                     android:textAlignment="center"
-                    android:textSize="16sp"
+                    android:textSize="20sp"
                     app:layout_constraintEnd_toEndOf="@+id/btnAddWater"
                     app:layout_constraintHorizontal_bias="0.476"
                     app:layout_constraintStart_toStartOf="@+id/btnAddWater"
@@ -223,8 +226,8 @@
                 <Button
                     android:id="@+id/btnMinCoffee"
                     style="?android:attr/borderlessButtonStyle"
-                    android:layout_width="40dp"
-                    android:layout_height="40dp"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
                     android:layout_marginTop="4dp"
                     android:backgroundTint="#FFFFFF"
                     android:foreground="@drawable/arrowdown"
@@ -235,8 +238,8 @@
                 <Button
                     android:id="@+id/btnMinMilk"
                     style="?android:attr/borderlessButtonStyle"
-                    android:layout_width="40dp"
-                    android:layout_height="40dp"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
                     android:layout_marginTop="4dp"
                     android:backgroundTint="#FFFFFF"
                     android:foreground="@drawable/arrowdown"
@@ -247,8 +250,8 @@
                 <Button
                     android:id="@+id/btnMinWater"
                     style="?android:attr/borderlessButtonStyle"
-                    android:layout_width="40dp"
-                    android:layout_height="40dp"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
                     android:layout_marginTop="4dp"
                     android:backgroundTint="#FFFFFF"
                     android:foreground="@drawable/arrowdown"
@@ -259,8 +262,8 @@
                 <Button
                     android:id="@+id/btnAddMilk"
                     style="?android:attr/borderlessButtonStyle"
-                    android:layout_width="40dp"
-                    android:layout_height="40dp"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
                     android:layout_marginTop="8dp"
                     android:backgroundTint="#FFFFFF"
                     android:foreground="@drawable/arrowup"
@@ -271,8 +274,8 @@
                 <Button
                     android:id="@+id/btnAddCoffee"
                     style="?android:attr/borderlessButtonStyle"
-                    android:layout_width="40dp"
-                    android:layout_height="40dp"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
                     android:layout_marginTop="8dp"
                     android:backgroundTint="#FFFFFF"
                     android:foreground="@drawable/arrowup"
@@ -283,8 +286,8 @@
                 <Button
                     android:id="@+id/btnAddWater"
                     style="?android:attr/borderlessButtonStyle"
-                    android:layout_width="40dp"
-                    android:layout_height="40dp"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
                     android:layout_marginTop="8dp"
                     android:backgroundTint="#FFFFFF"
                     android:foreground="@drawable/arrowup"
@@ -294,13 +297,14 @@
 
                 <EditText
                     android:id="@+id/txtSellPrice"
-                    android:layout_width="70dp"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="4dp"
-                    android:layout_marginBottom="16dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginBottom="24dp"
                     android:ems="10"
                     android:inputType="number"
-                    android:textSize="12sp"
+                    android:textAlignment="center"
+                    android:textSize="20sp"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.498"
@@ -309,14 +313,14 @@
 
                 <EditText
                     android:id="@+id/txtCupNumber"
-                    android:layout_width="70dp"
+                    android:layout_width="wrap_content"
                     android:layout_height="0dp"
-                    android:layout_marginTop="4dp"
+                    android:layout_marginTop="8dp"
                     android:ems="10"
                     android:inputType="number"
-                    android:textSize="12sp"
+                    android:textAlignment="center"
+                    android:textSize="20sp"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.498"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/txtPrice" />
 
@@ -348,9 +352,9 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="24dp"
-                    android:layout_marginTop="16dp"
+                    android:layout_marginTop="24dp"
                     android:layout_marginEnd="24dp"
-                    android:layout_marginBottom="20dp"
+                    android:layout_marginBottom="24dp"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.0"
@@ -366,10 +370,11 @@
                     android:fontFamily="@font/open_sans_semibold"
                     android:text="LOCATIONS"
                     android:textColor="@color/black"
-                    android:textSize="14sp"
+                    android:textSize="20sp"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
+
             </androidx.constraintlayout.widget.ConstraintLayout>
         </androidx.cardview.widget.CardView>
 
@@ -396,12 +401,12 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="24dp"
-                    android:layout_marginTop="16dp"
+                    android:layout_marginTop="24dp"
                     android:fontFamily="@font/open_sans"
                     android:text="20 cup of coffee\n@IDR 10.600"
                     android:textAlignment="viewStart"
                     android:textColor="@color/black"
-                    android:textSize="12sp"
+                    android:textSize="14sp"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/textView19" />
 
@@ -409,13 +414,13 @@
                     android:id="@+id/txtCoffeeCost"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="16dp"
+                    android:layout_marginTop="24dp"
                     android:layout_marginEnd="24dp"
                     android:fontFamily="@font/open_sans"
                     android:text="IDR 212.000"
                     android:textAlignment="viewStart"
                     android:textColor="@color/black"
-                    android:textSize="12sp"
+                    android:textSize="14sp"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/textView19" />
 
@@ -429,7 +434,7 @@
                     android:text="Location Rent\nUniversity"
                     android:textAlignment="viewStart"
                     android:textColor="@color/black"
-                    android:textSize="12sp"
+                    android:textSize="14sp"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/txtCoffeeNum" />
 
@@ -444,7 +449,7 @@
                     android:text="IDR 312.00"
                     android:textAlignment="viewStart"
                     android:textColor="@color/black"
-                    android:textSize="12sp"
+                    android:textSize="14sp"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/txtLocationChoosen" />
@@ -459,7 +464,7 @@
                     android:text="IDR 100.00"
                     android:textAlignment="viewStart"
                     android:textColor="@color/black"
-                    android:textSize="12sp"
+                    android:textSize="14sp"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/txtCoffeeNum" />
 
@@ -474,7 +479,7 @@
                     android:text="TOTAL"
                     android:textAlignment="viewStart"
                     android:textColor="@color/black"
-                    android:textSize="12sp"
+                    android:textSize="16sp"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/txtLocationChoosen" />
@@ -487,7 +492,7 @@
                     android:fontFamily="@font/open_sans_semibold"
                     android:text="TODAY COSTS"
                     android:textColor="@color/black"
-                    android:textSize="14sp"
+                    android:textSize="20sp"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
