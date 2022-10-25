@@ -27,7 +27,7 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/cardCosts" />
+            app:layout_constraintTop_toBottomOf="@+id/cardProfit" />
 
         <TextView
             android:id="@+id/txtWelcome"
@@ -93,7 +93,7 @@
             app:layout_constraintTop_toBottomOf="@+id/txtWeather">
 
             <androidx.constraintlayout.widget.ConstraintLayout
-                android:id="@+id/cardRecipes"
+                android:id="@+id/cardResult"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
 
@@ -303,6 +303,7 @@
                     android:layout_marginBottom="24dp"
                     android:ems="10"
                     android:inputType="number"
+                    android:text="0"
                     android:textAlignment="center"
                     android:textSize="20sp"
                     app:layout_constraintBottom_toBottomOf="parent"
@@ -318,6 +319,7 @@
                     android:layout_marginTop="8dp"
                     android:ems="10"
                     android:inputType="number"
+                    android:text="0"
                     android:textAlignment="center"
                     android:textSize="20sp"
                     app:layout_constraintEnd_toEndOf="parent"
@@ -379,7 +381,7 @@
         </androidx.cardview.widget.CardView>
 
         <androidx.cardview.widget.CardView
-            android:id="@+id/cardCosts"
+            android:id="@+id/cardProfit"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="24dp"
@@ -397,7 +399,7 @@
                 android:layout_height="match_parent">
 
                 <TextView
-                    android:id="@+id/txtCoffeeNum"
+                    android:id="@+id/txtCoffeeRevenue"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="24dp"
@@ -411,7 +413,7 @@
                     app:layout_constraintTop_toBottomOf="@+id/textView19" />
 
                 <TextView
-                    android:id="@+id/txtCoffeeCost"
+                    android:id="@+id/txtTotalRevenue"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="24dp"
@@ -436,10 +438,10 @@
                     android:textColor="@color/black"
                     android:textSize="14sp"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/txtCoffeeNum" />
+                    app:layout_constraintTop_toBottomOf="@+id/txtCoffeeRevenue" />
 
                 <TextView
-                    android:id="@+id/txtTotal"
+                    android:id="@+id/txtProfit"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="20dp"
@@ -455,7 +457,7 @@
                     app:layout_constraintTop_toBottomOf="@+id/txtLocationChoosen" />
 
                 <TextView
-                    android:id="@+id/txtLocationCost"
+                    android:id="@+id/txtTotalExpenses"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="16dp"
@@ -466,7 +468,7 @@
                     android:textColor="@color/black"
                     android:textSize="14sp"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/txtCoffeeNum" />
+                    app:layout_constraintTop_toBottomOf="@+id/txtCoffeeRevenue" />
 
                 <TextView
                     android:id="@+id/txtTotalText"

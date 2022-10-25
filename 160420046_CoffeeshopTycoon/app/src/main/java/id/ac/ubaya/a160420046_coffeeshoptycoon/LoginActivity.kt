@@ -9,9 +9,9 @@ import android.widget.Toast
 import kotlinx.android.synthetic.main.activity_login.*
 
 class LoginActivity : AppCompatActivity() {
-
-    companion object {
-        const val PLAYER_NAME: String = "pname"
+    override fun onBackPressed() {
+        Toast.makeText(this, "There is no back action", Toast.LENGTH_LONG).show()
+        return
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -37,10 +37,10 @@ class LoginActivity : AppCompatActivity() {
             var inputtedPassword = txtPassword.text.toString()
 
             if ((inputtedUsername == username) && (inputtedPassword == password)){
+                Global.playerName = playerName.toString()
                 val intent = Intent(this, PreparationActivity::class.java)
-                intent.putExtra(PLAYER_NAME, playerName)
                 startActivity(intent)
-                finish()
+//                finish()
             }
             else{
                 Toast.makeText(this, "This credential does not match our records!", Toast.LENGTH_SHORT).show()

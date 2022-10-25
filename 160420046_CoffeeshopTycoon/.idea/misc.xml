@@ -3,14 +3,17 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/College/Semester 5/NMP (ZA)/TS/CoffeeshopTycoon/160420046_CoffeeshopTycoon/app/src/main/res/drawable/item_bg.xml" value="0.163" />
         <entry key="..\:/College/Semester 5/NMP (ZA)/TS/CoffeeshopTycoon/160420046_CoffeeshopTycoon/app/src/main/res/layout-w1240dp/activity_login.xml" value="0.2484375" />
         <entry key="..\:/College/Semester 5/NMP (ZA)/TS/CoffeeshopTycoon/160420046_CoffeeshopTycoon/app/src/main/res/layout-w936dp/activity_login.xml" value="0.2453125" />
         <entry key="..\:/College/Semester 5/NMP (ZA)/TS/CoffeeshopTycoon/160420046_CoffeeshopTycoon/app/src/main/res/layout/activity_login.xml" value="0.33" />
         <entry key="..\:/College/Semester 5/NMP (ZA)/TS/CoffeeshopTycoon/160420046_CoffeeshopTycoon/app/src/main/res/layout/activity_main.xml" value="0.33177083333333335" />
-        <entry key="..\:/College/Semester 5/NMP (ZA)/TS/CoffeeshopTycoon/160420046_CoffeeshopTycoon/app/src/main/res/layout/activity_preparation.xml" value="0.4599358974358974" />
-        <entry key="..\:/College/Semester 5/NMP (ZA)/TS/CoffeeshopTycoon/160420046_CoffeeshopTycoon/app/src/main/res/layout/activity_simulation.xml" value="0.27395833333333336" />
+        <entry key="..\:/College/Semester 5/NMP (ZA)/TS/CoffeeshopTycoon/160420046_CoffeeshopTycoon/app/src/main/res/layout/activity_preparation.xml" value="0.2858565737051793" />
+        <entry key="..\:/College/Semester 5/NMP (ZA)/TS/CoffeeshopTycoon/160420046_CoffeeshopTycoon/app/src/main/res/layout/activity_result.xml" value="0.391304347826087" />
+        <entry key="..\:/College/Semester 5/NMP (ZA)/TS/CoffeeshopTycoon/160420046_CoffeeshopTycoon/app/src/main/res/layout/activity_simulation.xml" value="0.33" />
         <entry key="..\:/College/Semester 5/NMP (ZA)/TS/CoffeeshopTycoon/160420046_CoffeeshopTycoon/app/src/main/res/layout/myspinner_item_layout.xml" value="0.27291666666666664" />
         <entry key="..\:/College/Semester 5/NMP (ZA)/TS/CoffeeshopTycoon/160420046_CoffeeshopTycoon/app/src/main/res/layout/myspinner_layout.xml" value="0.27395833333333336" />
+        <entry key="..\:/College/Semester 5/NMP (ZA)/TS/CoffeeshopTycoon/160420046_CoffeeshopTycoon/app/src/main/res/layout/random_result_item.xml" value="0.33" />
       </map>
     </option>
   </component>

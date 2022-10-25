@@ -1,5 +1,6 @@
 package id.ac.ubaya.a160420046_coffeeshoptycoon
 
+import android.content.Intent
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
@@ -8,57 +9,51 @@ import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.widget.addTextChangedListener
 import kotlinx.android.synthetic.main.activity_preparation.*
 import kotlin.random.Random
 
 
 class PreparationActivity : AppCompatActivity() {
-
-
-//    Define initial variables
-    private val weatherArray = arrayOf("Sunny Day", "Rainy Day", "Thunderstorm")
+    override fun onBackPressed() {
+        Toast.makeText(this, "There is no back action", Toast.LENGTH_LONG).show()
+        return
+    }
 
 //    Randomize Weather
-    val randomIndex = Random.nextInt(weatherArray.size)
-    val randomWeather = weatherArray[randomIndex]
+    val randomIndex = Random.nextInt(Global.weather.size)
 
     var coffeenum = 0
     var milknum = 0
     var waternum = 0
-    var cupprice = 0
-    var cupnum = 0
 
     var locationCost = 0
     var coffeeCost = 0
-    var totalCost = 0
-    var sellPrice = 0
 
     fun updateCoffeePrice() {
-        cupprice = coffeenum * Global.coffeeCost + milknum * Global.milkCost + waternum * Global.waterCost
-        var strCupPrice = "%,d".format(cupprice).replace(",", ".")
-        txtCoffeeNum.setText(cupnum.toString() + " cup of coffee\n@IDR "+ strCupPrice.toString())
+        Global.cupprice = coffeenum * Global.coffeeCost + milknum * Global.milkCost + waternum * Global.waterCost
+        var strCupPrice = "%,d".format(Global.cupprice).replace(",", ".")
+        txtCoffeeRevenue.setText(Global.cupnum.toString() + " cup of coffee\n@IDR "+ strCupPrice.toString())
         txtPrice.setText("cost per cup of coffee is IDR "+ strCupPrice.toString() +" \nhow many cup do you want to sell ?")
         updateCoffeeCost()
         updateTotalCost()
     }
     fun updateCoffeeCost(){
-        coffeeCost = cupnum * cupprice
+        coffeeCost = Global.cupnum * Global.cupprice
         var strTotalCoffeePrice = "%,d".format(coffeeCost).replace(",", ".")
-        txtCoffeeCost.setText("IDR "+ strTotalCoffeePrice.toString())
+        txtTotalRevenue.setText("IDR "+ strTotalCoffeePrice.toString())
         updateTotalCost()
     }
     fun updateLocationCost() {
         var strLocationCost = "%,d".format(locationCost).replace(",", ".")
-        txtLocationCost.setText(" IDR " + strLocationCost.toString())
+        txtTotalExpenses.setText(" IDR " + strLocationCost.toString())
         updateTotalCost()
     }
     fun updateTotalCost(){
-        totalCost = locationCost + coffeeCost
-        var strTotalCost = "%,d".format(totalCost).replace(",", ".")
-        txtTotal.setText(" IDR "+ strTotalCost.toString())
+        Global.totalExpenses = locationCost + coffeeCost
+        var strTotalCost = "%,d".format(Global.totalExpenses).replace(",", ".")
+        txtProfit.setText(" IDR "+ strTotalCost.toString())
 
-        if(totalCost > Global.playerBalance){
+        if(Global.totalExpenses > Global.playerBalance){
             btnStartDay.setEnabled(false);
             btnStartDay.setText("Insufficient Balance")
         }
@@ -71,18 +66,24 @@ class PreparationActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_preparation)
+
+        Global.weatherRandomIndex = randomIndex
+        val randomWeather = Global.weather[Global.weatherRandomIndex].toString()
+
         updateCoffeePrice()
         updateCoffeeCost()
         updateLocationCost()
         updateTotalCost()
 
-//        Retrieve the player name from intent
-        val playerName = intent.getStringExtra(LoginActivity.PLAYER_NAME)
 //        Display the player name
-        txtWelcome.text = "Welcome, $playerName!"
+        val playerName = Global.playerName
+        txtWelcome.text = "Welcome, $playerName"
 //        Display Initial Balance
         var strBalance = "%,d".format(Global.playerBalance).replace(",", ".")
         txtBalance.text = "Balance: IDR $strBalance"
+
+//        Display Day Number
+        txtDay.text = "Day " + Global.dayNumber.toString()
 
 //        Display Randomized Weather
         txtWeather.text = "$randomWeather"
@@ -141,10 +142,10 @@ class PreparationActivity : AppCompatActivity() {
             }
             override fun onTextChanged(s: CharSequence, start: Int, before: Int, count: Int) {
                 if (txtCupNumber.text.toString() != ""){
-                    cupnum = Integer.parseInt(txtCupNumber.text.toString())
+                    Global.cupnum = Integer.parseInt(txtCupNumber.text.toString())
                 }
                 else{
-                    cupnum = 0
+                    Global.cupnum = 0
                 }
                 updateCoffeePrice()
                 updateCoffeeCost()
@@ -159,10 +160,10 @@ class PreparationActivity : AppCompatActivity() {
             }
             override fun onTextChanged(s: CharSequence, start: Int, before: Int, count: Int) {
                 if (txtSellPrice.text.toString() != ""){
-                    sellPrice = Integer.parseInt(txtSellPrice.text.toString())
+                    Global.sellPrice = Integer.parseInt(txtSellPrice.text.toString())
                 }
                 else{
-                    sellPrice = 0
+                    Global.sellPrice = 0
                 }
             }
         })
@@ -182,7 +183,18 @@ class PreparationActivity : AppCompatActivity() {
 
 //        Button Start Day
         btnStartDay.setOnClickListener{
-            
+            if (Global.cupnum > 0){
+                if (Global.sellPrice > 0){
+                    val intent = Intent(this, SimulationActivity::class.java)
+                    startActivity(intent)
+                }
+                else{
+                    Toast.makeText(this, "Please input minimum IDR 1 as a sell price !", Toast.LENGTH_SHORT).show()
+                }
+            }
+            else{
+                Toast.makeText(this, "Please input minimum 1 cup number to sell !", Toast.LENGTH_SHORT).show()
+            }
         }
 
     }
