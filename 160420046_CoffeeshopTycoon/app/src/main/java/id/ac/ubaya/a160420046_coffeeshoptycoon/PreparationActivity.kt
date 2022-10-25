@@ -1,6 +1,9 @@
 package id.ac.ubaya.a160420046_coffeeshoptycoon
 
+import android.content.Context
+import android.content.DialogInterface
 import android.content.Intent
+import android.content.SharedPreferences
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
@@ -14,6 +17,7 @@ import kotlin.random.Random
 
 
 class PreparationActivity : AppCompatActivity() {
+//    Cannot go back
     override fun onBackPressed() {
         Toast.makeText(this, "There is no back action", Toast.LENGTH_LONG).show()
         return
@@ -67,7 +71,9 @@ class PreparationActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_preparation)
 
+//        Set random weather
         Global.weatherRandomIndex = randomIndex
+//        Get random weather
         val randomWeather = Global.weather[Global.weatherRandomIndex].toString()
 
         updateCoffeePrice()
@@ -78,16 +84,14 @@ class PreparationActivity : AppCompatActivity() {
 //        Display the player name
         val playerName = Global.playerName
         txtWelcome.text = "Welcome, $playerName"
-//        Display Initial Balance
+//        Display Player Balance
         var strBalance = "%,d".format(Global.playerBalance).replace(",", ".")
         txtBalance.text = "Balance: IDR $strBalance"
-
 //        Display Day Number
         txtDay.text = "Day " + Global.dayNumber.toString()
-
 //        Display Randomized Weather
         txtWeather.text = "$randomWeather"
-
+//        Set spin location
         val adapter = ArrayAdapter(this, R.layout.myspinner_layout, Global.location)
         adapter.setDropDownViewResource(R.layout.myspinner_item_layout)
         spinLocation.adapter = adapter
@@ -131,6 +135,51 @@ class PreparationActivity : AppCompatActivity() {
                 waternum -= 1
                 txtNumWater.setText(waternum.toString())
                 updateCoffeePrice()
+            }
+        }
+
+//        Button Use Template
+        btnUseTemplate.setOnClickListener{
+            // Set Shared Preference
+            val sharedFile = "id.ac.ubaya.a160420046.coffeeshoptycoon"
+            val shared: SharedPreferences = getSharedPreferences(sharedFile, Context.MODE_PRIVATE)
+            coffeenum = shared.getInt("numCoffee", 0)
+            milknum = shared.getInt("numMilk", 0)
+            waternum = shared.getInt("numWater", 0)
+
+            txtNumCoffee.setText(coffeenum.toString())
+            txtNumMilk.setText(milknum.toString())
+            txtNumWater.setText(waternum.toString())
+            updateCoffeePrice()
+
+            Toast.makeText(this, "Template successfuly used!", Toast.LENGTH_SHORT).show()
+        }
+
+//        Button Save Recipe
+        btnSaveRecipe.setOnClickListener{
+            val builder: android.app.AlertDialog.Builder = android.app.AlertDialog.Builder(this)
+            builder.setCancelable(true)
+            builder.setTitle("Confirmation")
+            builder.setMessage("Saving will overwrite previous template. Are you sure?")
+            builder.setPositiveButton("Confirm",
+                DialogInterface.OnClickListener { dialog, which ->
+                    // Set Shared Preference
+                    val sharedFile = "id.ac.ubaya.a160420046.coffeeshoptycoon"
+                    val shared: SharedPreferences = getSharedPreferences(sharedFile, Context.MODE_PRIVATE)
+                    val editor: SharedPreferences.Editor = shared.edit()
+                    editor.putInt("numCoffee", coffeenum)
+                    editor.putInt("numMilk", milknum)
+                    editor.putInt("numWater", waternum)
+                    editor.apply()
+                    Toast.makeText(this, "Template Saved!", Toast.LENGTH_SHORT).show()
+                })
+            builder.setNegativeButton(android.R.string.cancel,
+                DialogInterface.OnClickListener { dialog, which ->
+                })
+
+            val dialog: android.app.AlertDialog? = builder.create()
+            if (dialog != null) {
+                dialog.show()
             }
         }
 

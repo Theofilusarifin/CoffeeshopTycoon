@@ -36,11 +36,12 @@ class LoginActivity : AppCompatActivity() {
             var inputtedUsername = txtUsername.text.toString()
             var inputtedPassword = txtPassword.text.toString()
 
+//            Username and Password Checking
             if ((inputtedUsername == username) && (inputtedPassword == password)){
                 Global.playerName = playerName.toString()
+//                Navigate to preparation activity
                 val intent = Intent(this, PreparationActivity::class.java)
                 startActivity(intent)
-//                finish()
             }
             else{
                 Toast.makeText(this, "This credential does not match our records!", Toast.LENGTH_SHORT).show()
