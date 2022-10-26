@@ -59,11 +59,6 @@ class SimulationActivity : AppCompatActivity() {
 
         Global.coffeSold = coffeeSold
 
-        val lac = LayoutAnimationController(AnimationUtils.loadAnimation(this, R.anim.item_anim))
-        lac.delay = 0.20f
-        lac.order = LayoutAnimationController.ORDER_NORMAL
-
-        recyclerView.layoutAnimation = lac
         recyclerView.adapter = RVAdapter(customers)
 
         btnResults.setOnClickListener {
