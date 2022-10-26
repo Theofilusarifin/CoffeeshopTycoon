@@ -58,14 +58,14 @@
             android:id="@+id/txtDay"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="32dp"
+            android:layout_marginTop="16dp"
             android:fontFamily="@font/open_sans_bold"
             android:text="Day 1"
             android:textColor="@color/black"
             android:textSize="24sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/txtBalance" />
+            app:layout_constraintTop_toBottomOf="@+id/btnSaveProgress" />
 
         <TextView
             android:id="@+id/txtWeather"
@@ -335,6 +335,7 @@
                     android:layout_marginBottom="24dp"
                     android:ems="10"
                     android:inputType="number"
+                    android:maxLength="10"
                     android:text="0"
                     android:textAlignment="center"
                     android:textSize="20sp"
@@ -351,6 +352,7 @@
                     android:layout_marginTop="8dp"
                     android:ems="10"
                     android:inputType="number"
+                    android:maxLength="7"
                     android:text="0"
                     android:textAlignment="center"
                     android:textSize="20sp"
@@ -539,6 +541,20 @@
                     app:layout_constraintTop_toTopOf="parent" />
             </androidx.constraintlayout.widget.ConstraintLayout>
         </androidx.cardview.widget.CardView>
+
+        <Button
+            android:id="@+id/btnSaveProgress"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="8dp"
+            android:backgroundTint="?android:attr/colorMultiSelectHighlight"
+            android:capitalize="characters"
+            android:text="Save Progress"
+            android:textSize="10sp"
+            app:cornerRadius="24dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txtBalance" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>

@@ -41,6 +41,7 @@ class LoginActivity : AppCompatActivity() {
                 Global.playerName = playerName.toString()
 //                Navigate to preparation activity
                 val intent = Intent(this, PreparationActivity::class.java)
+                intent.putExtra("PROFIT", 0)
                 startActivity(intent)
             }
             else{

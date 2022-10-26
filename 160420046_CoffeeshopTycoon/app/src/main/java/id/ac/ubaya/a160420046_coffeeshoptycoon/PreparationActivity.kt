@@ -26,6 +26,7 @@ class PreparationActivity : AppCompatActivity() {
 //    Randomize Weather
     val randomIndex = Random.nextInt(Global.weather.size)
 
+//    Intitialize variable
     var coffeenum = 0
     var milknum = 0
     var waternum = 0
@@ -70,6 +71,42 @@ class PreparationActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_preparation)
+
+        if (!Global.loadedSave){
+            val sharedFile = "id.ac.ubaya.a160420046.coffeeshoptycoon"
+            val shared: SharedPreferences = getSharedPreferences(sharedFile, Context.MODE_PRIVATE)
+//        Retrieve Shared Preference
+            val savedBalance = shared.getInt("playerBalance", 0)
+            val savedDayNumber = shared.getInt("dayNumber", 0)
+
+            //        Load Data
+            if (savedBalance != 0){
+                Global.playerBalance = savedBalance
+            }
+            if (savedDayNumber != 0){
+                Global.dayNumber = savedDayNumber
+                Toast.makeText(this, "Saved data loaded successfuly!", Toast.LENGTH_SHORT).show()
+            }
+
+//            To make data not loaded over and over
+            Global.loadedSave = true
+        }
+
+        btnSaveProgress.setOnClickListener{
+            // Set Shared Preference
+            val sharedFile = "id.ac.ubaya.a160420046.coffeeshoptycoon"
+            val shared: SharedPreferences = getSharedPreferences(sharedFile, Context.MODE_PRIVATE)
+            val editor: SharedPreferences.Editor = shared.edit()
+
+            editor.putInt("playerBalance", Global.playerBalance)
+            editor.putInt("dayNumber", Global.dayNumber)
+            editor.apply()
+            Toast.makeText(this, "Data saved successfuly!", Toast.LENGTH_SHORT).show()
+        }
+
+//        Player balance updated from previous profit
+        val previous_profit = intent.getIntExtra("PROFIT", 0)
+        Global.playerBalance += previous_profit
 
 //        Set random weather
         Global.weatherRandomIndex = randomIndex

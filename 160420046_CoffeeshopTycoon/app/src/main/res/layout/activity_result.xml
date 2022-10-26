@@ -15,9 +15,7 @@
             android:id="@+id/btnStartNew"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="24dp"
             android:layout_marginTop="16dp"
-            android:layout_marginEnd="24dp"
             android:layout_marginBottom="24dp"
             android:backgroundTint="?android:attr/colorMultiSelectHighlight"
             android:capitalize="characters"
@@ -107,13 +105,11 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="40dp"
                     android:layout_marginEnd="24dp"
-                    android:layout_marginBottom="24dp"
                     android:fontFamily="@font/open_sans"
                     android:text="IDR 312.00"
                     android:textAlignment="viewStart"
                     android:textColor="@color/black"
                     android:textSize="14sp"
-                    app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/txtLocationChoosen" />
 
@@ -137,13 +133,11 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="24dp"
                     android:layout_marginTop="40dp"
-                    android:layout_marginBottom="24dp"
                     android:fontFamily="@font/open_sans"
                     android:text="TOTAL"
                     android:textAlignment="viewStart"
                     android:textColor="@color/black"
                     android:textSize="16sp"
-                    app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/txtLocationChoosen" />
 
@@ -173,6 +167,20 @@
                     app:layout_constraintHorizontal_bias="0.498"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/txtCoffeeRevenue" />
+
+                <TextView
+                    android:id="@+id/txtBankrupt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="24dp"
+                    android:layout_marginBottom="24dp"
+                    android:textAlignment="center"
+                    android:textColor="@android:color/holo_red_light"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/txtTotalText" />
+
             </androidx.constraintlayout.widget.ConstraintLayout>
         </androidx.cardview.widget.CardView>
 
