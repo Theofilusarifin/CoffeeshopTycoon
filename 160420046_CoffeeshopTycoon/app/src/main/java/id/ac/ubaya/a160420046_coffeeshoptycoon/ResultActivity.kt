@@ -54,7 +54,7 @@ class ResultActivity : AppCompatActivity() {
         txtProfit.text = "IDR $strProfit"
 
         if (Global.playerBalance + profit < 100700){
-            txtBankrupt.setText("Due to inssuficient balance to start a new day, \nLet's start a new game!")
+            txtBankrupt.setText("GAME OVER! \nDue to inssuficient balance to start a new day!")
             btnStartNew.setText("PLAY NEW GAME")
         }
         else{
@@ -63,7 +63,7 @@ class ResultActivity : AppCompatActivity() {
         }
 
         btnStartNew.setOnClickListener {
-            if (Global.playerBalance + profit < 100700) {
+            if (Global.playerBalance + profit < 101700) {
 //                Reset Game
                 Global.playerBalance = 350000
                 Global.dayNumber = 1

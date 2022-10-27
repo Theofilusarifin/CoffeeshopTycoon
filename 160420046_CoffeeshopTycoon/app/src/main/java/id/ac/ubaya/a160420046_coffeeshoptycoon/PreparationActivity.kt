@@ -258,11 +258,13 @@ class PreparationActivity : AppCompatActivity() {
         spinLocation.onItemSelectedListener = object: AdapterView.OnItemSelectedListener {
             override fun onItemSelected(p0: AdapterView<*>?, p1: View?, p2: Int, p3: Long) {
                 locationCost = Global.location[p2].fee
+                txtLocationChoosen.text = "Location Rent\n" + Global.location[p2].name
                 updateLocationCost()
             }
 
             override fun onNothingSelected(p0: AdapterView<*>?) {
                 locationCost = Global.location[0].fee
+                txtLocationChoosen.text = "Location Rent\n" + Global.location[0].name
                 updateLocationCost()
             }
         }

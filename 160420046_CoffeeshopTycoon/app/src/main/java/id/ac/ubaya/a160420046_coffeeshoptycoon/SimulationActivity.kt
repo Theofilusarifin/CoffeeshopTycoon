@@ -31,7 +31,7 @@ class SimulationActivity : AppCompatActivity() {
 //        Randomize the customer
         var hour = 7
         var buy_probability = Global.weather[Global.weatherRandomIndex].probability
-        for (i in 0..12) {
+        for (i in 1..12) {
             var strTime = ""
             if (hour < 10){
                 strTime = "0" + hour.toString() + ".00"
